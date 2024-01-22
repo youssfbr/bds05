@@ -14,6 +14,7 @@ public class Movie implements Serializable {
 	private String subTitle;
 	private Integer year;
 	private String imgUrl;
+	@Column(columnDefinition = "text")
 	private String synopsis;
 
 	@ManyToOne
