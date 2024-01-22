@@ -4,28 +4,21 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tb_review")
-public class Review implements Serializable {
+@Table(name = "tb_role")
+public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String text;
+	private String authority;
+	
+	public Role() {
+	}
 
-	@ManyToOne
-	@JoinColumn(name = "movie_id")
-	private Movie movie;
-
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
-
-	public Review() {}
-
-	public Review(Long id , String text , Movie movie) {
+	public Role(Long id, String authority) {
 		this.id = id;
-		this.text = text;
-		this.movie = movie;
+		this.authority = authority;
 	}
 
 	public Long getId() {
@@ -36,28 +29,12 @@ public class Review implements Serializable {
 		this.id = id;
 	}
 
-	public String getText() {
-		return text;
+	public String getAuthority() {
+		return authority;
 	}
 
-	public void setText(String text) {
-		this.text = text;
-	}
-
-	public Movie getMovie() {
-		return movie;
-	}
-
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
+	public void setAuthority(String authority) {
+		this.authority = authority;
 	}
 
 	@Override
@@ -76,12 +53,12 @@ public class Review implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Review other = (Review) obj;
+		Role other = (Role) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}	
+	}
 }

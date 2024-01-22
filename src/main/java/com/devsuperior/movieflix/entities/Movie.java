@@ -94,6 +94,10 @@ public class Movie implements Serializable {
 		this.genre = genre;
 	}
 
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

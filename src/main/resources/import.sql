@@ -1,3 +1,6 @@
+INSERT INTO tb_role (authority) VALUES ('ROLE_VISITOR');
+INSERT INTO tb_role (authority) VALUES ('ROLE_MEMBER');
+
 INSERT INTO tb_genre (name) VALUES ('Aventura');
 INSERT INTO tb_genre (name) VALUES ('Ficção');
 INSERT INTO tb_genre (name) VALUES ('Terror');
